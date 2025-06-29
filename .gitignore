@@ -1,0 +1,10 @@
+**/__pycache__/
+**/*.py[cod]
+**/.env
+*.env
+**/serviceAccount.json
+**/*.ipynb
+.vscode/
+.idea/
+.DS_Store
+
