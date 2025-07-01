@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Use GCP service credentials
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "serviceAccount.json"
 
 db = firestore.Client()

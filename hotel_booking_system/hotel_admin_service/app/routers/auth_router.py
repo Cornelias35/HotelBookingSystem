@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from app.models.data_models import AdminDTO, AdminDB
-from app.database.session import get_db
+from app.data_models import AdminDTO, AdminDB
+from app.session import get_db
 from dotenv import load_dotenv
 import jwt
 import os
@@ -11,7 +11,7 @@ from passlib.context import CryptContext
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-router = APIRouter(tags=["Authentication"])
+router = APIRouter(prefix="/v1/Authentication",tags=["/v1/Authentication"])
 
 def hash_password(password: str) -> str:
     return pwd_context.hash(password)
@@ -36,7 +36,7 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
         username=str(admin.username),
         password=str(admin.password)
     )
-    if not admin or not verify_password(form_data.password, admin_obj.password):
+    if not admin or not verify_password(form_data.password, admin.password):
         raise HTTPException(
             status_code=401, 
             detail="Incorrect username or password"

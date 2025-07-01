@@ -2,16 +2,22 @@ from pydantic import BaseModel
 from app.database.session import Base
 from sqlalchemy import Column, Integer, DateTime, Float, String
 from datetime import datetime
+from enum import Enum
+
+class RoomType(Enum):
+    economy = "economy"
+    standard = "standard"
+    deluxe = "deluxe"
 
 class UserBookDTO(BaseModel):
     user_id : int
     user_name : str
     hotel_id : int
     number_of_people : int
-    start_date : datetime
-    end_date : datetime
-    room_id : int
-    price : float
+    room_type : RoomType
+    start_date : str
+    end_date : str
+    is_authenticated : bool
 
 class UserBookDB(Base):
     __tablename__ = "booked_users"

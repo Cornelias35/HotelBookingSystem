@@ -1,0 +1,59 @@
+version: "3.9"
+
+services:
+  api_gateway:
+    build:
+      context: ./api_gateway_service
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - book_hotel_service
+      - hotel_admin_service
+      - hotel_ai_agent_service
+      - hotel_comments_service
+      - hotel_search_service
+    env_file:
+      - ./api_gateway_service/.env
+
+  book_hotel_service:
+    build:
+      context: ./book_hotel_service
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8000"
+    env_file:
+      - ./book_hotel_service/.env
+
+  hotel_admin_service:
+    build:
+      context: ./hotel_admin_service
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8000"
+    env_file:
+      - ./hotel_admin_service/.env
+
+  hotel_ai_agent_service:
+    build:
+      context: ./hotel_ai_agent_service
+      dockerfile: Dockerfile
+    ports:
+      - "8003:8000"
+    env_file:
+      - ./hotel_ai_agent_service/.env
+
+  hotel_comments_service:
+    build:
+      context: ./hotel_comments_service
+      dockerfile: Dockerfile
+    ports:
+      - "8004:8000"
+
+  hotel_search_service:
+    build:
+      context: ./hotel_search_service
+      dockerfile: Dockerfile
+    ports:
+      - "8005:8000"
+    

@@ -2,10 +2,10 @@ fastapi
 uvicorn
 SQLAlchemy
 psycopg2-binary
-pydanticz
 python-dotenv
 SQLAlchemy-Utils
 psycopg2-binary
 pyjwt
 dotenv
+httpx
 passlib[bcrypt]
