@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import comments
+from app import comments
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Hotel Comment Service", version="1.0")

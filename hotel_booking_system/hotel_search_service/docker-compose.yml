@@ -1,7 +1,0 @@
-services:
-  app:
-    build: .
-    container_name: hotel-search-service
-    ports:
-      - "3000:3000"
-    restart: unless-stopped

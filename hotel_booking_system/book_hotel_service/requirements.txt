@@ -9,3 +9,4 @@ pyjwt
 dotenv
 httpx
 passlib[bcrypt]
+pika

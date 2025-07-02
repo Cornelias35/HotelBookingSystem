@@ -1,7 +1,7 @@
 from fastapi import FastAPI
-from app.routers import hotel_book_router
+from app import hotel_book_router
 from fastapi.middleware.cors import CORSMiddleware
-from app.database.session import Base, engine
+from app.session import Base, engine
 
 Base.metadata.create_all(bind=engine)
 

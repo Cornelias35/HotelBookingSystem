@@ -17,4 +17,5 @@ class AIState(MessagesState):
     room_type : RoomType
     number_of_rooms: int
     is_authenticated : bool
+    summary : str
     

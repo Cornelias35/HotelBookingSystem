@@ -4,8 +4,8 @@ SQLAlchemy
 psycopg2-binary
 python-dotenv
 SQLAlchemy-Utils
-psycopg2-binary
 pyjwt
 dotenv
 passlib[bcrypt]
 python-multipart
+redis
