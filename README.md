@@ -18,24 +18,24 @@ http://35.234.118.93/search_service/v1/search/get_hotels?city=izmir&country=t%C3
 
 Out: 
 
-[
-  {
-    "is_pet_accepted": true,
-    "district": "çeşme",
-    "latitude": 0,
-    "city": "izmir",
-    "longitude": 0,
-    "country": "türkiye",
-    "admin_id": 2,
-    "contains_pool": true,
-    "hotel_picture": "string",
-    "contains_wifi": true,
-    "max_capacity_for_economy": 50,
-    "hotel_name": "Best",
-    "id": 1,
-    "contains_aircooler": true,
-    "max_capacity_for_standard": 50,
-    "contains_park": true,
-    "max_capacity_for_deluxe": 50
-  }
-]
+[  
+  {  
+    "is_pet_accepted": true,  
+    "district": "çeşme",  
+    "latitude": 0,  
+    "city": "izmir",  
+    "longitude": 0,  
+    "country": "türkiye",  
+    "admin_id": 2,  
+    "contains_pool": true,  
+    "hotel_picture": "string",  
+    "contains_wifi": true,  
+    "max_capacity_for_economy": 50,  
+    "hotel_name": "Best",  
+    "id": 1,  
+    "contains_aircooler": true,  
+    "max_capacity_for_standard": 50,  
+    "contains_park": true,  
+    "max_capacity_for_deluxe": 50  
+  }  
+]  
