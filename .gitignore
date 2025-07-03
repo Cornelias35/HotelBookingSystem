@@ -7,4 +7,7 @@
 .vscode/
 .idea/
 .DS_Store
+*kubectl.sha256
+*kubectl
+*google-cloud-sdk
 

@@ -4,7 +4,7 @@ import jwt
 import os
 from dotenv import load_dotenv
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/v1/Authentication/admin/login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/admin/login")
 load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY")
 

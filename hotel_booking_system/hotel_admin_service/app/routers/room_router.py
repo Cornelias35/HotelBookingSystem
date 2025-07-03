@@ -5,7 +5,7 @@ from app.data_models import RoomRead, RoomCreate, RoomDB, HotelDB
 from app.services.room_service import add_room
 from app.dependencies import get_current_admin
 
-router = APIRouter(prefix="/v1/rooms", tags=["Rooms"])
+router = APIRouter(tags=["Rooms"])
 
 @router.post("/create_room", response_model=list[RoomRead], status_code=status.HTTP_201_CREATED)
 async def create_room(

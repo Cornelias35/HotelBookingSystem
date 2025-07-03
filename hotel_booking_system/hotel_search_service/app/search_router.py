@@ -11,10 +11,10 @@ redis_client = redis.Redis(
     decode_responses=True
 )
 
-router = APIRouter(prefix="/v1/search", tags=["search"])
+router = APIRouter(tags=["search"])
 
-@router.get("/get_hotels", status_code=status.HTTP_201_CREATED)
-def get_hotels(
+@router.get("/search_hotels", status_code=status.HTTP_201_CREATED)
+def search_hotels(
     city : str,
     country : str,
     start_date : str,
@@ -23,12 +23,14 @@ def get_hotels(
 ):
     cache_key = f"search:{city}:{country}:{start_date}:{end_date}:{number_of_people}"
     cached_result = redis_client.get(cache_key)
-
+    print(redis_client)
+    print("Cached resulst:", cached_result)
     if cached_result:
         hotels = json.loads(cached_result)
+        return hotels
     else:    
         try:
-            url = "http://hotel_admin_service:8000/v1/hotels/get_hotels"
+            url = "http://hotel-admin-service:8000/get_hotels"
             params={
                     "city": city,
                     "country": country,

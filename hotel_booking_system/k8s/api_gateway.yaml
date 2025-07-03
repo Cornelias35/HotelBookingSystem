@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+        - name: api-gateway
+          image: gcr.io/windy-nation-464015-s2/api-gateway-service
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: api-gateway-env
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-gateway-env
+  labels:
+    app: api-gateway
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-gateway-service
+spec:
+  selector:
+    app: api-gateway
+  ports:
+    - port: 80
+      targetPort: 8000
+  type: LoadBalancer

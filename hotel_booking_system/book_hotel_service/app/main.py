@@ -16,3 +16,7 @@ app.add_middleware(
 )
 
 app.include_router(hotel_book_router.router)
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Hotel Booking Service"}

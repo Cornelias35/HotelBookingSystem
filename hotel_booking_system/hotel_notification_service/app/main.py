@@ -20,6 +20,9 @@ app = FastAPI(lifespan=lifespan)
 app.include_router(scheduler_router)
 app.mount("/ws", socketio.ASGIApp(sio))
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Hotel Notification Service"}
 
 @sio.event
 async def connect(sid, environ):

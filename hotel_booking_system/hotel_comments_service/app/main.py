@@ -13,3 +13,7 @@ app.add_middleware(
 )
 
 app.include_router(comments.router)
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Hotel Comment Service"}

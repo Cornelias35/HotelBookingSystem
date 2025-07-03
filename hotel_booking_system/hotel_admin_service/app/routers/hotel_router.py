@@ -14,7 +14,7 @@ import redis
 import os
 import json
 
-router = APIRouter(prefix="/v1/hotels", tags=["Hotels"])
+router = APIRouter(tags=["Hotels"])
 
 redis_client = redis.Redis(
     host=os.getenv("REDIS_HOST", "localhost"),

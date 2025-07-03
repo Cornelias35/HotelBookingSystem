@@ -7,7 +7,7 @@ import httpx
 import pika
 import json
 
-router = APIRouter(prefix="/v1/book_service", tags=["BookService"])
+router = APIRouter(tags=["BookService"])
 
 def publish_reservation_event(reservation_data: dict):
     connection = pika.BlockingConnection(pika.ConnectionParameters(host="rabbitmq"))
@@ -38,7 +38,7 @@ async def hotel_book_router(
 
     is_authenticated = request.headers.get("X-Is-Authenticated", "false").lower() == "true"
 
-    url = "http://hotel_admin_service:8000/v1/hotels/book_room"
+    url = "http://hotel-admin-service:8000/book_room"
     json = {
         "hotel_id" : user.hotel_id,
         "room_type" : user.room_type.name,

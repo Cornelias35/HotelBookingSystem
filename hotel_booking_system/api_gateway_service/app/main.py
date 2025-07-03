@@ -10,18 +10,22 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 SERVICE_URLS = {
-    "book_service": "http://book_hotel_service:8000",
-    "admin_service": "http://hotel_admin_service:8000",
-    "ai-agent_service": "http://hotel_ai_agent_service:8000",
-    "comments_service": "http://hotel_comments_service:8000",
-    "search_service": "http://hotel_search_service:8000",
-    "notification_service": "http://hotel_notification_service:8000"
+    "book": "http://book-hotel-service:8000",
+    "admin": "http://hotel-admin-service:8000",
+    "ai_agent": "http://hotel-ai-agent-service:8000",
+    "comments": "http://hotel-comments-service:8000",
+    "search": "http://hotel-search-service:8000",
+    "notification": "http://hotel-notification-service:8000"
 }
 
 client = httpx.AsyncClient()
 app.include_router(user_router)
 
-@app.api_route("/{service}/{path:path}",methods=["GET", "POST", "PUT", "DELETE", "PATCH"])
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Hotel Management API"}
+
+@app.api_route("/v1/{service}/{path:path}",methods=["GET", "POST", "PUT", "DELETE", "PATCH"])
 async def proxy(
     service: str, 
     path: str, 
@@ -31,6 +35,7 @@ async def proxy(
         raise HTTPException(status_code=404, detail="Service not found")
     
     url = f"{SERVICE_URLS[service]}/{path}"
+
     token = request.headers.get("authorization")
     user_id = get_current_user_optional(token=token)
     try:

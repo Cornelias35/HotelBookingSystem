@@ -10,7 +10,7 @@ import httpx
 from app.models import AIState, RoomType
 from typing import Optional, Literal
 
-router = APIRouter(prefix="/v1/ai_agent", tags=["AI Agent"])
+router = APIRouter(tags=["AI Agent"])
 @router.get("/ai-service")
 def ai_agent(prompt : str, request: Request, chat_summary : str = ""): #
     load_dotenv()
@@ -119,7 +119,7 @@ def get_hotels(
         end_date : str in "year-mm-dd" format
         number_of_rooms : int
     """
-    url = "http://hotel_admin_service:8000/v1/hotels/get_hotels"
+    url = "http://hotel-admin-service:8000/get_hotels"
     params={
         "city": city, 
         "country": country,
@@ -143,7 +143,7 @@ def get_hotel_ratings(
     Args :
         hotel_id
     """
-    url = f"http://hotel_comments_service:8000/api/v1/comments/{hotel_id}/comment_stats"
+    url = f"http://hotel-comments-service:8000/{hotel_id}/comment_stats"
     params = {
         "hotel_id":hotel_id
     }
@@ -176,7 +176,7 @@ def make_reservation(
         is_authenticated : bool
     """
 
-    url = "http://book_hotel_service:8000/v1/book_service/book_room"
+    url = "http://book-hotel-service:8000/book_room"
     json = {
         "user_id" : user_id,
         "user_name" : user_name,

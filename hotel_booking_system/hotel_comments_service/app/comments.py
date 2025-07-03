@@ -2,9 +2,9 @@ from fastapi import APIRouter, HTTPException, Query
 from app.models import Comment
 from app.firestore_client import add_comment_to_firestore, get_comments_by_hotel, get_average_rating
 
-router = APIRouter(prefix="/api/v1/comments", tags=["Comments"])
+router = APIRouter(tags=["Comments"])
 
-@router.post("/")
+@router.post("/create_comment")
 def create_comment(comment: Comment):
     add_comment_to_firestore(comment)
     return {"message": "Comment added successfully"}

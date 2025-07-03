@@ -11,7 +11,7 @@ from passlib.context import CryptContext
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-router = APIRouter(prefix="/v1/Authentication",tags=["/v1/Authentication"])
+router = APIRouter(tags=["/v1/Authentication"])
 
 def hash_password(password: str) -> str:
     return pwd_context.hash(password)

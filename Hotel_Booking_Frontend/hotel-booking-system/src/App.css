@@ -1,0 +1,96 @@
+.container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.form-row input,
+.form-row button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  flex: 1 1 150px;
+}
+
+.hotel-list li {
+  list-style: none;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.comment-list li {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+}
+
+.book-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: seagreen;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.chat-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.chat-box {
+  width: 300px;
+  background: #fff;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background: #333;
+  color: white;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 0.5rem;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.chat-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.chat-footer input {
+  padding: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.chat-footer button {
+  margin-bottom: 0.25rem;
+  padding: 0.4rem;
+}
+
+.chat-button {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+}

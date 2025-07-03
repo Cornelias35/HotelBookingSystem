@@ -3,7 +3,7 @@ import httpx
 
 router = APIRouter(prefix="/v1/notification_service", tags=["NotificationService"])
 
-HOTEL_ADMIN_SERVICE_URL = "http://hotel_admin_service:8000/v1/hotels/capacity_percentage/"
+HOTEL_ADMIN_SERVICE_URL = "http://hotel-admin-service:8000/capacity_percentage"
 
 @router.get("/check-capacity")
 async def check_capacity(

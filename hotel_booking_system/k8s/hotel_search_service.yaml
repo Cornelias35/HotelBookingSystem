@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotel-search
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotel-search
+  template:
+    metadata:
+      labels:
+        app: hotel-search
+    spec:
+      containers:
+        - name: hotel-search
+          image: gcr.io/windy-nation-464015-s2/hotel-search-service
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: hotel-search-env
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hotel-search-env
+  labels:
+    app: hotel-search
+data:
+  REDIS_HOST: redis
+  REDIS_PORT: "6379"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotel-search-service
+spec:
+  selector:
+    app: hotel-search
+  ports:
+    - port: 8000
+      targetPort: 8000
+  type: ClusterIP

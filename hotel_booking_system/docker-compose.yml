@@ -21,16 +21,16 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - book_hotel_service
-      - hotel_admin_service
-      - hotel_ai_agent_service
-      - hotel_comments_service
-      - hotel_search_service
-      - hotel_notification_service
+      - book-hotel-service
+      - hotel-admin-service
+      - hotel-ai-agent-service
+      - hotel-comments-service
+      - hotel-search-service
+      - hotel-notification-service
     env_file:
       - ./api_gateway_service/.env
       
-  book_hotel_service:
+  book-hotel-service:
     build:
       context: ./book_hotel_service
       dockerfile: Dockerfile
@@ -39,7 +39,7 @@ services:
     env_file:
       - ./book_hotel_service/.env
 
-  hotel_admin_service:
+  hotel-admin-service:
     build:
       context: ./hotel_admin_service
       dockerfile: Dockerfile
@@ -53,7 +53,7 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
 
-  hotel_ai_agent_service:
+  hotel-ai-agent-service:
     build:
       context: ./hotel_ai_agent_service
       dockerfile: Dockerfile
@@ -62,14 +62,14 @@ services:
     env_file:
       - ./hotel_ai_agent_service/.env
 
-  hotel_comments_service:
+  hotel-comments-service:
     build:
       context: ./hotel_comments_service
       dockerfile: Dockerfile
     ports:
       - "8004:8000"
 
-  hotel_search_service:
+  hotel-search-service:
     build:
       context: ./hotel_search_service
       dockerfile: Dockerfile
@@ -80,7 +80,7 @@ services:
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-  hotel_notification_service:
+  hotel-notification-service:
     build:
       context: ./hotel_notification_service
       dockerfile: Dockerfile

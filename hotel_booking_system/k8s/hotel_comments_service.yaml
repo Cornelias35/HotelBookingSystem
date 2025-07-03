@@ -1,0 +1,50 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotel-comments
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hotel-comments
+  template:
+    metadata:
+      labels:
+        app: hotel-comments
+    spec:
+      containers:
+        - name: hotel-comments
+          image: gcr.io/windy-nation-464015-s2/hotel-comments-service
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: hotel-comments-env
+          volumeMounts:
+            - name: sa-key-volume
+              mountPath: /app/serviceAccount.json
+              subPath: serviceAccount.json
+      volumes:
+        - name: sa-key-volume
+          secret:
+            secretName: firestore-sa-key
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hotel-comments-env
+  labels:
+    app: hotel-comments
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotel-comments-service
+spec:
+  selector:
+    app: hotel-comments
+  ports:
+    - port: 8000
+      targetPort: 8000
+  type: ClusterIP

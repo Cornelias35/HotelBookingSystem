@@ -21,3 +21,7 @@ app.add_middleware(
 app.include_router(auth_router.router)
 app.include_router(room_router.router)
 app.include_router(hotel_router.router)
+
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the Hotel Admin Service"}
