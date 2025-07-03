@@ -35,6 +35,7 @@ You can watch the implementation walkthrough in this video:
   - Redis  
   - RabbitMQ  
   - SQLAlchemy
+  - LangGraph (AI Agent, with gpt3.5-turbo)  
 
 **Cloud**:
   - Google Cloud  
