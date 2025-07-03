@@ -1,22 +1,22 @@
 ![ER Diagram](https://github.com/user-attachments/assets/21baef53-2ae9-4f38-85ea-36185342f594)
 
-Public URLs:
+Public URLs:  
 
-http://35.234.118.93/ -> API Gateway
+http://35.234.118.93/ -> API Gateway  
 
-http://35.234.118.93/v1/book/ -> For booking
-http://35.234.118.93/v1/admin/ -> For admin services
-http://35.234.118.93/v1/ai_agent/ -> For ai agent services
-http://35.234.118.93/v1/comments/ -> For comments services
-http://35.234.118.93/v1/search/ -> For search services
-http://35.234.118.93/v1/notification/ -> For notification services
+http://35.234.118.93/v1/book/ -> For booking  
+http://35.234.118.93/v1/admin/ -> For admin services  
+http://35.234.118.93/v1/ai_agent/ -> For ai agent services  
+http://35.234.118.93/v1/comments/ -> For comments services  
+http://35.234.118.93/v1/search/ -> For search services  
+http://35.234.118.93/v1/notification/ -> For notification services  
 
 
-Example gateway usage: 
+Example gateway usage:  
 
-http://35.234.118.93/v1/search/search_hotels?city=izmir&country=t%C3%BCrkiye&start_date=2025-07-03&end_date=2025-07-05&number_of_people=2
+http://35.234.118.93/v1/search/search_hotels?city=izmir&country=t%C3%BCrkiye&start_date=2025-07-03&end_date=2025-07-05&number_of_people=2  
 
-Out: 
+Out:  
 
 [  
   {  
