@@ -25,7 +25,7 @@
 ### Implementation Details  
 
 You can watch the implementation walkthrough in this video:  
-[YouTube Video](https://youtu.be/A4JysNw0J3c)  
+[YouTube Video](https://youtu.be/M2lZFkYazRU)  
 
 ---
 ### Technologies used:  
