@@ -4,17 +4,17 @@ Public URLs:
 
 http://35.234.118.93/ -> API Gateway
 
-http://35.234.118.93/book_service -> For booking
-http://35.234.118.93/admin_service -> For admin services
-http://35.234.118.93/ai-agent_service -> For ai agent services
-http://35.234.118.93/comments_service -> For comments services
-http://35.234.118.93/search_service -> For search services
-http://35.234.118.93/notification_service -> For notification services
+http://35.234.118.93/v1/book/ -> For booking
+http://35.234.118.93/v1/admin/ -> For admin services
+http://35.234.118.93/v1/ai_agent/ -> For ai agent services
+http://35.234.118.93/v1/comments/ -> For comments services
+http://35.234.118.93/v1/search/ -> For search services
+http://35.234.118.93/v1/notification/ -> For notification services
 
 
 Example gateway usage: 
 
-http://35.234.118.93/search_service/v1/search/get_hotels?city=izmir&country=t%C3%BCrkiye&start_date=2025-07-03&end_date=2025-07-05&number_of_people=2
+http://35.234.118.93/v1/search/search_hotels?city=izmir&country=t%C3%BCrkiye&start_date=2025-07-03&end_date=2025-07-05&number_of_people=2
 
 Out: 
 
