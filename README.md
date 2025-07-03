@@ -29,20 +29,34 @@ You can watch the implementation walkthrough in this video:
 
 ---
 ### Technologies used:  
+
 **Backend**:
   - FastAPI  
   - Redis  
   - RabbitMQ  
-  - SQLAlchemy  
-**Cloud**:  
+  - SQLAlchemy
+
+**Cloud**:
   - Google Cloud  
   - GKE (Google Kubernetes Engine)  
   - Datastore (NoSQL Database)  
   - Google SQL (For Sql Database, Postgresql)  
-**Deployment**:  
+
+**Deployment**:
   - For local testing, docker compose  
   - Dockerfile  
   - Kubernetes (Multiple Service Deployment)  
-**Frontend**:  
+
+**Frontend**:
   - React (TypeScript)
 ---
+
+### Issues encountered: 
+  As this was my first time building an application using a microservices architecture, designing and testing multiple services was quite challenging. Additionally, I had no prior experience with Google Cloud, so setting up and managing its various services presented a steep learning curve.  
+
+Deploying the system using Kubernetes was also unfamiliar to me. Initially, it was difficult to understand, but once I grasped the core concepts, I realized how powerful and scalable it can be. Furthermore, this project marked my first time working with RabbitMQ and Socket.IO, both of which required significant effort to learn and integrate properly.
+  - Microservice architecture
+  - Google Cloud and Services
+  - Kubernetes
+  - RabbitMQ
+  - SocketIO
