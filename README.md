@@ -49,7 +49,7 @@ You can watch the implementation walkthrough in this video:
   - Kubernetes (Multiple Service Deployment)  
 
 **Frontend**:
-  - React (TypeScript)
+  - Not implemented
 ---
 
 ### Issues encountered: 
